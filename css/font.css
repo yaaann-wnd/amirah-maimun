@@ -1,0 +1,5 @@
+@font-face {
+  font-family: "Casta";
+  src: url('Casta-Thin.otf');
+  src: url('Casta-Thin.otf') format('opentype'),
+}

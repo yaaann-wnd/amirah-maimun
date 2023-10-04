@@ -1,0 +1,234 @@
+:root {
+    --white: #f7f7ff;
+    --blue: #87cefa;
+    --yellow: #ffd151;
+    --black: #343a40;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    display: none;
+    width: 0px;
+    background: transparent;
+}
+
+body {
+    height: 300vh;
+    width: 100%;
+    font-family: 'Casta';
+    background-color: var(--white);
+}
+
+.intro-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--white);
+    z-index: 2;
+    inset: 0;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+    align-items: center;
+    overflow: hidden;
+}
+
+.lingkaran {
+    position: absolute;
+    aspect-ratio: 1/1;
+    z-index: -1;
+}
+
+.lingkaran-1 {
+    height: 35%;
+    border-radius: 50%;
+    background-color: var(--blue);
+    top: -15%;
+    left: -20%;
+    animation: lingkaran-1 300ms 300ms ease-out forwards;
+    transform: scale(0);
+}
+
+@keyframes lingkaran-1 {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.lingkaran-2 {
+    height: 45%;
+    border-radius: 50%;
+    background-color: var(--yellow);
+    bottom: -20%;
+    right: -25%;
+    animation: lingkaran-1 300ms 400ms ease-out forwards;
+    transform: scale(0);
+}
+
+.lingkaran-3 {
+    height: 50%;
+    border-radius: 50%;
+    background-color: var(--yellow);
+    top: -20%;
+    left: -5%;
+    z-index: -2;
+    filter: blur(150px);
+    opacity: 0;
+    animation: lingkaran-3 300ms ease-out forwards;
+}
+
+@keyframes lingkaran-3 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.lingkaran-4 {
+    height: 60%;
+    border-radius: 50%;
+    background-color: var(--blue);
+    bottom: -30%;
+    left: -35%;
+    z-index: -2;
+    opacity: 0;
+    animation: lingkaran-3 300ms 150ms ease-out forwards;
+    filter: blur(150px);
+}
+
+.upper-star-wrapper, .lower-star-wrapper {
+    opacity: 0;
+    animation: bintang 400ms ease-out 500ms forwards;
+}
+
+@keyframes bintang {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.upper-star-wrapper img, .lower-star-wrapper img {
+    aspect-ratio: 1/1;
+    height:30px;
+}
+
+.pickup-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .7rem;
+}
+
+.pickup {
+    text-align: center;
+    text-wrap: balance;
+    font-size: 1.7rem;
+    font-weight: 600;
+    z-index: 1;
+    opacity: 0;
+    animation: pickup 400ms ease-out 900ms forwards;
+}
+
+@keyframes pickup {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.pickup-wrapper button {
+    position: relative;
+    font-family: inherit;
+    outline: 1px solid var(--white);
+    outline-offset: -5px;
+    border: none;
+    background-color: var(--black);
+    color: var(--white);
+    padding: .5rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 200ms ease-in-out;
+    isolation: isolate;
+    opacity: 0;
+    animation: tombol 400ms ease-out 1000ms forwards;
+}
+
+@keyframes tombol {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.pickup-wrapper button::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: var(--white);
+    scale: 0 0;
+    transition: all 200ms ease-in-out;
+}
+
+.pickup-wrapper button:hover,
+.pickup-wrapper button:hover
+{
+    outline: 1px solid var(--black);
+    outline-offset: 0px;
+    color: var(--black);
+}
+
+.pickup-wrapper button:hover::after,
+.pickup-wrapper button:focus::after
+{
+    scale: 1 1;
+}
+
+.container {
+    z-index: 1;
+}
+
+.title-wrapper {
+    position: fixed;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--black);
+}
+
+.sub-title {
+    font-size: 1.5rem;
+}
+
+.name {
+    font-size: 3.5rem;
+}
