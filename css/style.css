@@ -40,29 +40,155 @@ body {
     overflow: hidden;
 }
 
-.moving-text-wrapper-top {
+.kotak-wrapper {
     position: absolute;
-    top: 2%;
-    right: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.kotak-wrapper-top {
+    right: 4%;
+    left: 4%;
+    top: 7%;
+}
+
+.kotak-wrapper-bottom {
+    right: 4%;
+    left: 4%;
+    bottom: 7%;
+}
+
+.kotak {
+    aspect-ratio: 1/1;
+    height: 7px;
+    background-color: var(--black);
     opacity: 0;
+}
+
+.kotak-top:first-child {
+    animation: kotak-1 300ms 500ms ease-out forwards;
+}
+.kotak-top:nth-child(2) {
+    animation: kotak-2 300ms 450ms ease-out forwards;
+}
+.kotak-top:last-child {
+    animation: kotak-3 300ms 400ms ease-out forwards;
+}
+
+.kotak-bottom:first-child {
+    animation: kotak-1-bottom 300ms 400ms ease-out forwards;
+}
+.kotak-bottom:nth-child(2) {
+    animation: kotak-2-bottom 300ms 450ms ease-out forwards;
+}
+.kotak-bottom:last-child {
+    animation: kotak-3-bottom 300ms 500ms ease-out forwards;
+}
+
+@keyframes kotak-1 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes kotak-2 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes kotak-3 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes kotak-1-bottom {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes kotak-2-bottom {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes kotak-3-bottom {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.kotak-top:first-child, .kotak-top:last-child {
+    background: none;
+    outline: 1px solid var(--black);
+    outline-offset: -1px;
+}
+
+.kotak-bottom:first-child, .kotak-bottom:last-child {
+    background: none;
+    outline: 1px solid var(--black);
+    outline-offset: -1px;
+}
+
+.moving-wrapper {
+    position: absolute;
     font-weight: 600;
-    max-width: 65vw;
-    text-align: right;
     padding-block: .3rem;
+    display: flex;
+    white-space: nowrap;
     border-top: 1px solid var(--black);
     border-bottom: 1px solid var(--black);
     color: var(--black);
-    z-index: -2;
-    font-size: .6rem;
-    display: flex;
-    white-space: nowrap;
     gap: 1rem;
+    opacity: 0;
+    font-size: .6rem;
+    z-index: 1;
     overflow: hidden;
-    animation: moving-text 300ms 400ms ease-out forwards;
+}
+
+.moving-text-wrapper-top {
+    top: 2%;
+    right: 0;
+    text-align: right;
+    animation: moving-text-top 300ms 400ms ease-out forwards;
     transform: translateX(100%);
 }
 
-@keyframes moving-text {
+.moving-text-wrapper-bottom {
+    bottom: 2%;
+    right: 0;
+    animation: moving-text-bottom 300ms 400ms ease-out forwards;
+
+}
+
+@keyframes moving-text-top {
     0% {
         opacity: 0;
         transform: translateX(100%);
@@ -86,8 +212,28 @@ body {
     }
 }
 
-.moving-text-top {
-    transform: translateX(-50%);
+@keyframes moving-text-bottom {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    25% {
+        opacity: .25;
+    }
+
+    50% {
+        opacity: .50;
+    }
+
+    75% {
+        opacity: .75;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .lingkaran {
