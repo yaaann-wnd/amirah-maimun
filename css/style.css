@@ -480,7 +480,7 @@ body {
 
 .container {
     z-index: 1;
-    min-height: 100svh;
+    min-height: 100vh;
 }
 
 .lingkaran-container-blur {
@@ -526,9 +526,9 @@ body {
 
 .kotak-container-2 {
     width: 60%;
-    height: 100svh;
+    height: 100vh;
     background-color: var(--blue);
-    top: 70svh;
+    top: 70vh;
     left: 0;
     border-top-right-radius: 100px;
 }
@@ -557,11 +557,11 @@ body {
 }
 
 .kotak-container-wrapper-atas {
-    top: 4svh;
+    top: 4vh;
 }
 
 .kotak-container-wrapper-bawah {
-    bottom: 4svh;
+    bottom: 4vh;
 }
 
 .kotak-container-atas, .kotak-container-bawah {
@@ -581,7 +581,7 @@ body {
 .title-wrapper {
     position: fixed;
     width: 100%;
-    top: 50svh;
+    top: 50vh;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
