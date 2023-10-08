@@ -2,6 +2,7 @@ const tombol_continue = document.getElementById('continue');
 const intro_transition = document.querySelector('.intro-transition');
 const selamat = document.querySelector('.selamat');
 const intro_container = document.querySelector('.intro-container');
+const body = document.body;
 
 tombol_continue.addEventListener('click', () => {
     setDisplay(true);
@@ -21,6 +22,7 @@ intro_transition.addEventListener('animationstart', () => {
 
 intro_transition.addEventListener('animationend', () => {
     setDisplay(false);
+    body.style.height = '300svh';
 });
 
 function setDisplay(tampil) {
