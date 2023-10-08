@@ -24,6 +24,61 @@ body {
     background-color: var(--white);
 }
 
+.intro-transition {
+    display: none;
+    z-index: 3;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background: linear-gradient(20deg, #87cefa, #96d1fc, #a4d4fd, #b1d7fe, #bcdafe, #c7deff, #d1e2ff, #dae5ff, #e3eaff, #eaeeff, #f1f2ff, #f7f7ff);
+    transform: translate(-50%, -50%);
+    height: 0;
+    width: 100%;
+    overflow: hidden;
+    /* animation: hai 3.5s ease-in forwards; */
+}
+
+
+@keyframes hai {
+    0%, 100% {
+        height: 0;
+    }
+
+    25%, 50%, 75% {
+        height: 100%;
+    }
+}
+
+.selamat {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    white-space: nowrap;
+    z-index: 5;
+    /* animation: selamat 2s 700ms ease-out forwards; */
+    opacity: 0;
+}
+
+@keyframes selamat {
+    0% {
+        opacity: 0;
+    }
+
+    25%, 50%, 75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        font-size: 5rem;
+    }
+
+
+}
+
 .intro-container {
     position: fixed;
     top: 0;
