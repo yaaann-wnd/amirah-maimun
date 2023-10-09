@@ -1,16 +1,18 @@
 const tombol_continue = document.getElementById('continue');
-const intro_transition = document.querySelector('.intro-transition');
+const intro_transition_front = document.querySelector('.intro-transition-front');
+const intro_transition_behind = document.querySelector('.intro-transition-behind');
 const selamat = document.querySelector('.selamat');
 const intro_container = document.querySelector('.intro-container');
 const body = document.body;
 
 tombol_continue.addEventListener('click', () => {
     setDisplay(true);
-    intro_transition.style.animation = 'hai 3.5s ease-in forwards';
+    intro_transition_front.style.animation = 'hai-front 3.5s cubic-bezier(.75,.14,.13,.86) forwards';
+    intro_transition_behind.style.animation = 'hai-behind 3.6s cubic-bezier(.75,.14,.13,.86) forwards';
     selamat.style.animation = 'selamat 2s 700ms ease-out forwards';
 });
 
-intro_transition.addEventListener('animationstart', () => {
+intro_transition_front.addEventListener('animationstart', () => {
     let waktu = 1;
 
     setInterval(() => {
@@ -20,17 +22,18 @@ intro_transition.addEventListener('animationstart', () => {
     }, 1000);
 })
 
-intro_transition.addEventListener('animationend', () => {
+intro_transition_front.addEventListener('animationend', () => {
     setDisplay(false);
     body.style.height = '300svh';
 });
 
 function setDisplay(tampil) {
     if (tampil) {
-        intro_transition.style.display = 'inline';
+        intro_transition_front.style.display = 'inline';
+        intro_transition_behind.style.display = 'inline';
         selamat.style.display = 'inline';
     } else {
-        intro_transition.style.display = 'none';
+        intro_transition_front.style.display = 'none';
         selamat.style.display = 'none';
     }
 
